@@ -1,0 +1,33 @@
+$error: tomato;
+$warning: plum;
+$success: limegreen;
+$alert: orange;
+$button-radius: 5px;
+$button-padding: $button-radius;
+$panel-radius: $button-radius * 2;
+$panel-padding: $panel-radius;
+
+@mixin rounded-box($radius, $padding, $background-color) {
+    border-radius: $radius;
+    padding: $padding;
+    display: inline-block;
+    background-color: $background-color;
+}
+
+.error {
+    @include rounded-box($button-radius, $button-padding, $error);
+}
+
+.warning {
+    @include rounded-box($button-radius, $button-padding, $warning);
+}
+
+.success {
+    @include rounded-box($button-radius, $button-padding, $success);
+}
+
+.alert {
+    @include rounded-box($panel-radius, $panel-padding, $alert);
+}
+
+

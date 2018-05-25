@@ -1,0 +1,22 @@
+.form-control {
+    background: #aadcec solid;
+    margin: 0;
+    padding: 20px;
+    padding-left: none;
+    margin: 20px;
+}
+
+button {
+    color: #333232;
+    cursor: pointer;
+}
+
+#button {
+    color: #333232;
+    cursor: pointer;
+}
+
+img {
+    margin: 20px;
+}
+

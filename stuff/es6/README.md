@@ -1,3 +1,36 @@
+# scoped vars (var vs let)
+
+```js
+for (var i = 1; i < 5; i++){
+   setTimeout(() => console.log(i), 1000);
+}
+
+5
+5
+5
+5
+
+for (let i = 1; i < 5; i++){
+   setTimeout(() => console.log(i), 1000);
+}
+
+1
+2
+3
+4
+
+for (var i = 1; i < 5; i++){
+   ((i) => {
+		setTimeout(() => console.log(i), 1000);
+   })(i)
+}
+
+1
+2
+3
+4
+```
+
 # scope and context vs binding and arrow functions
 
 ```js

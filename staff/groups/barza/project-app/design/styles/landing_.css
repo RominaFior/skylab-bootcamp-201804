@@ -1,0 +1,77 @@
+@import 'common1.css';
+.content {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 37% 63%;
+    grid-template-rows: 7% 25% 17% 6% 15% 20%;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+.content > .p-intro {
+    grid-row: 3;
+    font-size: 190%;
+}
+.content > .btns {
+    display: flex;
+    justify-content: center;
+    grid-row: 4;
+}
+.content > .p-regist {
+    grid-row: 5;
+    font-size: 130%;
+}
+a.buttons {
+    background-color: #f20000;
+    width: 30%;
+    height: 80%;
+    border: 2px solid white;
+    border-radius: 3px;
+    color: white;
+    font-weight: bold;
+    font-size: 120%;
+    text-decoration: none;
+}
+.buttons:hover {
+    background-color: rgba(116, 18, 14, 0.952);
+}
+.buttons:nth-child(2) {
+    margin-left: 15px;
+}
+@media screen and (max-width: 768px) {
+    .content {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 6% 15% 15% 6% 20% 24%;
+        font-size: 80%;
+    }
+    header {
+        font-size: 115%;
+    }
+    .buttons {
+        font-size: 85%;
+    }
+    a.buttons {
+        width: 20%;
+        height: 65%;
+    }
+}
+@media screen and (max-width: 450px) {
+    .content {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 5% 7% 11% 5% 10% 10%;
+        font-size: 65%;
+        margin: 0 3% 0 3%;
+    }
+    header {
+        font-size: 110%;
+    }
+    .buttons {
+        font-size: 50%;
+    }
+    a.buttons {
+        width: 30%;
+        height: 65%;
+    }
+}

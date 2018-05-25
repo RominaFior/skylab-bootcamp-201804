@@ -1,0 +1,28 @@
+block content
+  h1= 'TASK APP'
+
+block content
+  form(action="/tasks", method="POST")
+    input(type="text", name="text")
+    input(type="submit", value="Add Task")
+
+block content
+  h3= title_todos
+  
+  ul
+  each todo in todos
+    li= todo.text
+       a(href=`tasks/done/${todo.id}`, title="Mark Task Done") ✅
+
+  else
+    li There are no todos.
+
+  h3= title_dones
+
+  ul
+  each done in dones
+    li= done.text
+      a(href=`tasks/remove/${done.id}`, title="Remove Task") ❌
+
+  else
+    li There are no dones.

@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
+@import url('https://fonts.googleapis.com/css?family=Gothic+A1');
+
+
+@media screen and (max-width: 700px) {
+  
+    .backgroundprofile{
+      background-color: #1a323c;
+      height:100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+     
+    }
+    .profile{
+      order: 3;
+      height: 40%;
+      margin: 20% 20% 5% 1%;
+    }
+    .form3{
+      order:2;
+      width:40%;
+      text-align: center;
+      margin: 1% 20% 5% 20%;
+      
+    }
+    .boxLogOut{
+      
+      order:3;
+    }
+  }
+  
+  .backgroundprofile{
+    background-color: #1a323c;
+    height:100%;
+    width: 100%;
+    display: flex;
+    color:white;
+   
+  }
+  .profile{
+    order: 1;
+    background-image: url(../../images/spiderman.jpg);
+    width: 30%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 53vw;
+  }
+  .form3{
+    order:2;
+    width:70%;
+    text-align: center;
+    margin-right: 15%;
+  }
+  .boxLogOut{
+    order:3;
+    position: absolute;
+    margin: 2% 2%;
+    
+  }
+
+.butprofile{
+    order:1;
+     padding: 10px;
+     margin:0 2%;
+     background: linear-gradient(#e52d2d,#7d1418);
+     border: 1px;
+     color: white;
+     font-weight: 500;
+     animation-duration: 0.3s;
+     border-radius: 5px;
+     font-family: calibri;
+     font-size: 90%;
+   }

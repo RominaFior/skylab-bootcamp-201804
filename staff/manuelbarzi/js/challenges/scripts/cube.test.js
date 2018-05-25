@@ -16,17 +16,23 @@ test(function () {
         return result.toString() === [1, 8, 27].toString();
     });
 
-test(withErrorCapturing(function () {
-    cube(true);
-}),
+test(
+    withErrorCapturing(
+        function () {
+            cube(true);
+        }
+    ),
     'cube(true) should throw an error',
     function (result) {
         return result.message === 'input num is not a number, neither an array';
     });
 
-test(withErrorCapturing(function () {
-    cube([1, 2, 'a']);
-}),
+test(
+    withErrorCapturing(
+        function () {
+            cube([1, 2, 'a']);
+        }
+    ),
     'cube([1, 2, "a"]) should throw an error',
     function (result) {
         return result.message === 'input array is not a number at index 2';

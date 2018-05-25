@@ -1,0 +1,27 @@
+.error, .warning, .success, .alert {
+    display: inline-block;
+}
+
+.error, .warning, .success {
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.error {
+    background-color: tomato;
+    color: white;
+}
+
+.warning {
+    background-color: yellow;
+}
+
+.success {
+    background-color: limegreen;
+}
+
+.alert {
+    border-radius: 20px;
+    padding: 20px;
+    background-color: orange;
+}

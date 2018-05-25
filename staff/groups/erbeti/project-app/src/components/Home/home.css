@@ -1,0 +1,75 @@
+.ulList {
+    display: grid;
+    grid: 25% 25% 25% 25% / 25% 25% 25% 25%;
+    margin: 4vw;
+}
+
+.card img {
+    width: 100%;
+    height: 19vw;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+}
+
+.profile-button {
+    padding: 10px;
+    background: linear-gradient(#bf1903, #8f0b04);
+    border: 1px;
+    color: white;
+    font-weight: 600;
+    animation-duration: 0.3s;
+    border-radius: 5px;
+    font-family: calibri;
+    font-size: 110%;
+    cursor:pointer;
+    margin: 2vw 0 1vw 0;
+}
+.input-char {
+    padding: 1vw 21vw 1vw 1vw;
+    margin: 0 auto;
+}
+.search-char {
+    padding: 7px;
+    border: 0;
+    background: #ffffff00;
+    font-weight: 600;
+    outline: none;
+    color: white;
+    text-transform: uppercase;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    font-family: calibri;
+    font-size: 110%;
+    cursor: pointer;
+    margin: 2vw 0px 0px 2vw;
+}
+.search-char:hover{
+    color:#BB1803;
+}
+.card {
+    background: white;
+    margin: 1vw;
+    box-shadow: 2px 2px 3px black;
+    height: 40vw;
+    border-radius: 1.5vw;
+    padding-bottom: 2vw;
+}
+.ulList a{
+    text-decoration:none;
+    color:black;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+h3{
+    font-size:1.7vw;
+}
+.card p {
+    margin: 1vw 1vw 4vw 1vw;
+    height: 13vw;
+    overflow: scroll;
+    font-size: 1.4vw;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}

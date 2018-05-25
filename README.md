@@ -1,8 +1,8 @@
-![Skylab Coders Academy](stuff/doc/images/skylab-logo.png "Skylab Coders Academy")
+![Skylab Coders Academy](stuff/misc/skylab-logo.png "Skylab Coders Academy")
 
 # Full-Stack Web-Development Bootcamp 201804
 
-![Calendar](stuff/doc/images/calendar.jpg)
+![Calendar](stuff/misc/calendar.jpg)
 
 [Roadmap to becoming a web developer in 2018](https://github.com/kamranahmedse/developer-roadmap/blob/master/readme.md)
 

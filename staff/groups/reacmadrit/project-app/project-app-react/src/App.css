@@ -1,0 +1,102 @@
+
+@import url('https://fonts.googleapis.com/css?family=Lekton');
+
+
+h1 , h2{
+  color: white
+}
+
+.form-group {
+ margin-bottom: 0
+}
+
+body {
+  background-image: url("./images/manhattan.jpg");
+  font-family: 'Lekton', sans-serif;
+
+
+}
+
+.bg-darkcyan {
+  background: darkcyan;
+  color: white
+}
+
+.bg-lightcyan{
+  background: #d3e2e1;
+}
+input{
+  background: white;
+  border-radius: 5px;
+  padding: 4px;
+}
+
+.bar-item {
+  display: inline-block;
+  margin: 5px;
+  
+}
+
+header img{
+  width: 30px;
+  position: absolute;
+  margin-top: 5px;
+}
+
+header{
+ border-bottom: 2px solid white;
+ margin-bottom:10px  ;
+ height: 45px;
+}
+
+header ul {
+height: 40px;
+margin-right: 20px
+
+}
+
+header li {
+  float: right;
+  
+}
+
+header li::before {
+  content: "| ";
+  padding: 8px;
+  color: white;
+}
+
+
+header li:last-child::before {
+  content: " ";
+  padding: 8px;
+  color: white;
+}
+
+header a {
+  color: white;
+  text-decoration: none
+}
+
+header a:hover {
+  color: rgb(221, 219, 219);
+  text-decoration: none
+  
+}
+
+
+.box-img{
+  background: darkcyan;
+  width: 18vw;
+  height: 18vw;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+  border:3px solid white;
+
+}
+.box-img img{
+  margin: 0;
+  position: absolute;
+  left: 0;}
+

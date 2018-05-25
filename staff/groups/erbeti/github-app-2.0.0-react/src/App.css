@@ -1,0 +1,103 @@
+body{
+  height: 100%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 100px;
+}
+
+.App-header {
+  background-color: white;
+  height: 20%;
+  padding: 20px;
+  color: white;
+}
+main{
+  height: 80%;
+}
+.App-title {
+  font-size: 1.5em;
+  color:rgb(23,92,134);
+}
+
+
+.App-intro {
+  font-size: large;
+}
+main{
+  width: 100%;
+
+}
+aside{
+  width:30%;
+  float: left;
+ 
+}
+.infousers{
+  width:70%;
+  float: left;
+  
+  
+}
+ 
+
+.inputForm{
+  width:10%;
+  border: none;
+  border-bottom: 3px solid rgb(23,92,134);
+  color: black;
+  font-size: 15px;
+  padding: 1% 1%;
+  margin-right: 5%;
+  transition:0.5s;
+  outline: none;
+}
+.inputForm:focus {
+  width: 15%;
+}
+.buttonForm{
+  width:10%;
+  color:white;
+  border:none;
+  background-color: rgb(23,92,134);
+  border-radius: 20px;
+  font-size: 15px;
+  padding: 1% 1%;
+  transition:0.5s;
+}
+.buttonForm:hover{
+  background-color:rgb(25,113,166) 
+}
+
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+li img{
+  width:20%
+ }
+ .ulList{
+  width:50%;
+  background-color:rgb(23,92,134);
+  padding: 0 4%;
+  margin-left: 15%;
+  color:white;
+ }
+ .h1Title{
+  background: #175c86;
+  padding-top: 20px;
+ }
+ ul{
+   padding:0 1%; 
+ }
+ li{
+  list-style-type:none;
+  
+ }
+

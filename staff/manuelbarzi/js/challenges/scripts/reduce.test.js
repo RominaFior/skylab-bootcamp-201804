@@ -1,39 +1,57 @@
 'use strict';
 
-var res = reduce([1, 2, 3, 4, 5], function(accum, v) { return accum + v; }, 0);
+test(
+    function() {
+        return reduce([1, 2, 3, 4, 5], function(accum, v) { return accum + v; }, 0);
+    },
+    'reduce([1, 2, 3, 4, 5], function(accum, v) { return accum + v; }, 0) - with all arguments - should return 15',
+    function(result) {
+        return result === 15;
+    }
+);
 
-console.log('reduce([1, 2, 3, 4, 5], function(accum, v) { return accum + v; }, 0) should return 15', res === 15, res);
+test(
+    function() {
+        return reduce([1, 2, 3, 4, 5], function(accum, v) { return accum + v; });
+    },
+    'reduce([1, 2, 3, 4, 5], function(accum, v) { return accum + v; }) - without last argument - should return 15',
+    function(result) {
+        return result === 15;
+    }
+);
 
-res = reduce([1, 2, 3, 4, 5], function(accum, v) { return accum + v; });
+test(
+    withErrorCapturing(
+        function() {
+            return reduce();
+        }
+    ),
+    'reduce() - without any arguments - should throw an error',
+    function(result) {
+        return result.message === 'input array is not an array';
+    }
+);
 
-console.log('reduce([1, 2, 3, 4, 5], function(accum, v) { return accum + v; }) should return 15', res === 15, res);
+test(
+    withErrorCapturing(
+        function() {
+            return reduce(undefined, function(accum, v) { return accum + v; });
+        }
+    ),
+    'reduce(undefined, function(accum, v) { return accum + v; }) - without first argument - should throw an error',
+    function(result) {
+        return result.message === 'input array is not an array';
+    }
+);
 
-var error;
-
-try {
-    reduce();
-} catch(err) {
-    error = err;
-} finally {
-    console.log('reduce() without arguments should throw an error', error !== undefined, error);
-}
-
-error = undefined;
-
-try {
-    reduce(undefined, function(accum, v) { return accum + v; });
-} catch(err) {
-    error = err;
-} finally {
-    console.log('reduce(undefined, function(accum, v) { return accum + v; }) without first argument should throw an error', error !== undefined, error);
-}
-
-error = undefined;
-
-try {
-    reduce([]);
-} catch(err) {
-    error = err;
-} finally {
-    console.log('reduce([]) without second argument should throw an error', error !== undefined, error);
-}
+test(
+    withErrorCapturing(
+        function() {
+            return reduce([]);
+        }
+    ),
+    'reduce([]) - without second argument - should throw an error',
+    function(result) {
+        return result.message === 'input handler is not a function';
+    }
+);

@@ -1,7 +1,9 @@
 'use strict';
 
-var input = 'Hello World';
+// TODO
 
-var output = toRandomCase(input);
+// var input = 'Hello World';
 
-console.log('toRandomCase(input) should return input in random case', input.toLowerCase() === output.toLowerCase() && input !== output, output)
+// var output = toRandomCase(input);
+
+// console.log('toRandomCase(input) should return input in random case', input.toLowerCase() === output.toLowerCase() && input !== output, output);

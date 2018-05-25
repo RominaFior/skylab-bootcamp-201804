@@ -30,10 +30,10 @@ test(
 test(
     withErrorCapturing(
         function() {
-            forEach(undefined, function(v) { output.push(v) });
+            forEach(undefined, function() {});
         }
     ),
-    'forEach(undefined, function(v) { output.push(v) }) without first argument should throw an error',
+    'forEach(undefined, function() {}) without first argument should throw an error',
     function(result) {
         return result.message === 'input array is not an array';
     }

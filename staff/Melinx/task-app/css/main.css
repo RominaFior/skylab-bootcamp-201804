@@ -1,0 +1,47 @@
+
+
+
+.container{
+    grid-gap: 50px;
+}
+
+
+#add-task {
+ background-color: #ffa31a;
+ box-sizing: border-box;
+ padding: 2vh;
+
+};
+
+.btn{
+    padding: 0.2vh;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+    line-height: 50px;
+}
+
+#forms{
+    padding: 5vh;
+
+}   
+
+#header-row {
+    background-color: bisque;
+    margin-top: 10%;
+    border-radius: 1vh;
+};
+
+h1, .h1{
+    padding-top: 2vh;
+}
+
+.col-md-12 {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 30px;
+}

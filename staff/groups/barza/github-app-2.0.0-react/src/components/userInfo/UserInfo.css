@@ -1,0 +1,25 @@
+.titleInfo {
+    font-style: italic;
+    color:rgb(105, 105, 105);
+    margin: 10% 0 5% 0;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+.userInfo {
+    position: sticky;
+    top: 5%;
+    justify-content: center;
+}
+.userImg{
+    width: 30%;
+    height: 20%;
+    border: 2px solid rgb(105, 105, 105); 
+    border-radius: 110px;
+}
+
+
+p {
+    text-align: center;
+    margin-top: 5%;
+}
+

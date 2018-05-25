@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
+@import url('https://fonts.googleapis.com/css?family=Gothic+A1');
+
+h1 {
+  font-family: 'Fjalla One', sans serif;
+  color: lightgray;
+  font-size: 4vw;
+  letter-spacing: 6px;
+  /*width: 450px;*/
+  text-shadow: 2px 2px 10px black;
+  text-transform: uppercase;
+  margin: 0 auto;
+  margin-top:4vw;
+  margin-bottom:3vw;
+}
+
+h2 {
+  font-family: 'Fjalla One', sans serif;
+  color: white;
+  font-size: 3vw;
+  letter-spacing: 6px;
+  margin-top:2vw;
+  margin-bottom:3vw;  
+  text-transform: uppercase;
+  margin: 0 auto;
+}
+.anounce{
+  margin-bottom:4vw;
+}
+.enter-button{
+  padding: 10px;
+  width: 85px;
+  background: linear-gradient(#009688,#1ab3a5);
+  border: 1px;
+  color: white;
+  font-weight: 600;
+  animation-duration: 0.3s;
+  border-radius: 5px;
+  font-family: calibri;
+  font-size: 110%;
+}
+.enter-button:hover{
+  filter:opacity(70%)
+}
+.enter-button:active{
+  padding:12px;
+  width:90px;
+}
+
+
+
+.login-button {
+  order: 2;
+  padding: 4px;
+  font-family: fantasy;
+  /* -webkit-box-shadow: 1px 1px 3px #232323; */
+  /* box-shadow: 1px 1px 3px #232323; */
+  color: #ffffffd9;
+  padding-left: 10px;
+  outline: none;
+  font-size: 120%;
+  text-decoration: inherit;
+  cursor: pointer;
+  padding-right: 10px;
+  background: -webkit-gradient(linear,left top, left bottom,from(#027469),to(#009688));
+  background: -webkit-linear-gradient(#027469,#009688);
+  background: -o-linear-gradient(#027469,#009688);
+  background: transparent;
+  border: 1px gray;
+  /* border-radius: 5px; */
+  
+  margin: 2vw 0 0 0;
+}
+
+
+.register-button{
+  padding: 4px;
+  font-family: fantasy;
+  margin: 2vw 1.5vw 0 0vw;
+  color: #ffffffd9;
+  outline: none;
+  font-size: 120%;
+  text-decoration: inherit;
+  cursor: pointer;
+  padding-right: 10px;
+  background: -webkit-gradient(linear,left top, left bottom,from(#027469),to(#009688));
+  background: -webkit-linear-gradient(#027469,#009688);
+  background: -o-linear-gradient(#027469,#009688);
+  background: transparent;
+  border: 1px gray;
+
+}
+.privacy-text{
+  font-size:30%;
+  
+}
+.signup-button{
+  padding: 10px;
+  width: 85px;
+  background: linear-gradient(#e76800,#c75e08);
+  border: 1px;
+  color: white;
+  font-weight: 600;
+  animation-duration: 0.3s;
+  border-radius: 5px;
+  font-family: calibri;
+  font-size: 110%;
+}
+.signup-button:hover{
+  filter:opacity(70%)
+}
+.signup-button:active{
+  padding:12px;
+  width:90px;
+}
+
+
+/* .login-button{
+  
+    padding: 4px;
+    font-family: calibri;
+    box-shadow: 1px 1px 3px #232323;
+    color: white;
+    padding-left: 10px;
+    outline: none;
+    cursor:pointer;
+    padding-right: 10px;
+    background: linear-gradient(#027469,#009688);
+    border: 1px gray;
+    border-radius: 5px;
+    padding-left: 10px;
+
+} */
+
+
+.login-button {
+  padding: 4px;
+  font-family: 'Fjalla One', sans serif;
+  /* -webkit-box-shadow: 1px 1px 3px #232323; */
+  /* box-shadow: 1px 1px 3px #232323; */
+  color: #ffffffd9;
+  padding-left: 10px;
+  outline: none;
+  font-size: 2vw;
+  text-decoration: inherit;
+  cursor: pointer;
+  padding-right: 10px;
+  background: -webkit-gradient(linear,left top, left bottom,from(#027469),to(#009688));
+  background: -webkit-linear-gradient(#027469,#009688);
+  background: -o-linear-gradient(#027469,#009688);
+  background: transparent;
+  border: 1px gray;
+  /* border-radius: 5px; */
+  padding-left: 10px;
+  margin: 2vw 0 0 0;
+}
+
+
+.register-button{
+  padding: 4px;
+  font-family: 'Fjalla One', sans serif;
+  margin: 2vw 1.5vw 0 0vw;
+  color: #ffffffd9;
+  outline: none;
+  font-size: 2vw;
+  text-decoration: inherit;
+  cursor: pointer;
+  padding-right: 10px;
+  background: -webkit-gradient(linear,left top, left bottom,from(#027469),to(#009688));
+  background: -webkit-linear-gradient(#027469,#009688);
+  background: -o-linear-gradient(#027469,#009688);
+  background: transparent;
+  border: 1px gray;
+
+}
+.register-button:hover{
+  color:white;
+}
+.login-button:hover{
+  color:white;
+}
+.App {
+  text-align: center;
+}
+.title {
+  background-image: url(images/background-.jpg);
+
+  background-size: cover;
+
+  height: 40vw;
+}
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+.landing-buttons {
+  display: flex;
+  justify-content: flex-end;
+ 
+}
+.Profile-title {
+  text-align: center;
+}
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

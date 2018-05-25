@@ -1,0 +1,19 @@
+.main {
+    margin: 10px;
+    border: brown solid;
+    font-size: 20px;
+    border-radius: 7%
+}
+
+.list > li {
+    list-style: none;
+}
+
+.image {
+
+    border-radius: 50%;
+
+
+
+
+}

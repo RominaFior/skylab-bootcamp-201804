@@ -1,0 +1,75 @@
+
+@import url('https://fonts.googleapis.com/css?family=Bangers|Press+Start+2P');
+
+.App {
+  text-align: center;
+}
+
+img{
+  width: 200px;
+  border-radius: 50%;
+  border: 2px coral solid;
+}
+
+
+h2 {
+  padding : 15px;
+  font-family: 'Press Start 2P', cursive;
+
+
+}
+
+
+li{
+  list-style: none;
+ 
+}
+
+ul {
+  padding: 0;
+}
+
+section{
+  background:beige;
+  width: 49%;
+  float: left;
+  height: 500px;
+  margin-right: 0.75%;
+  margin-top: 0.5%
+
+}
+
+section:nth-child(odd){
+  background:lightcyan;
+  overflow: scroll;
+  margin-left: 0.5%
+} 
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+  font-family: 'Bangers', cursive;
+  font-size: 50px;
+  letter-spacing: 2px;
+
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

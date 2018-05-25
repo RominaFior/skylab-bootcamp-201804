@@ -1,0 +1,23 @@
+.searchBar {
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 20px 30px;
+    
+    font-size: 16px;
+
+}
+
+.button {
+    float: rigth;
+    width: 120px;
+    padding: 10px;
+    margin-left: 20px;
+    background: #2196F3;
+    color: white;
+    font-size: 10px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+    border-radius: 2px;
+
+}

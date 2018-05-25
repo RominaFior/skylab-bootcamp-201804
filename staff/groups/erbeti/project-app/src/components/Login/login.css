@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
+@import url('https://fonts.googleapis.com/css?family=Gothic+A1');
+
+@media screen and (max-width: 700px) {
+  
+  .backgroundlogin{
+  background-color: rgb(255, 217, 48);
+  height:100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  
+  }
+  
+  .login{
+  order:2;
+  height: 40%;
+  margin: 20% 20% 5% 1%;
+  } 
+  
+  .form{
+   order:1;
+   height: 40%;
+   text-align: center;
+   margin: 1% 20% 5% 20%;
+
+  }
+}
+
+
+.backgroundlogin{
+  background-color: rgb(255, 217, 48);
+  height:100%;
+  width: 100%;
+  display: flex;
+ 
+}
+
+.login{
+  order: 1;
+  background-image: url(../../images/deadpool.jpg);
+  width: 40%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 53vw;
+  
+
+}
+.form{
+  order:2;
+  width:60%;
+  text-align: center;
+  margin-right: 20vw;
+}
+
+.goRegister{
+  padding: 10px;
+  margin:1% 0;
+  background: linear-gradient(#bf1903,#8f0b04);
+  border: 1px;
+  color: white;
+  font-weight: 600;
+  animation-duration: 0.3s;
+  border-radius: 5px;
+  font-family: calibri;
+  font-size: 110%;
+}
+ .login-box {
+  margin-top: 70px !important;
+  width: 400px;
+  border-radius: 20px;
+  padding: 20px;
+  float: right
+}
+.login-box input{
+  font-size: 1.5vw;
+  margin-bottom: 1vw;
+}
+.login-box p{
+  font-size: 1.5vw;
+}

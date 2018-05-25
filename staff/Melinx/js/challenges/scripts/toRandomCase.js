@@ -5,28 +5,24 @@
 // toRandomCase("Hello My World"); // -> "heLLO my wOrld"
 
 
-
-function toRandomCase(str){
-    if(typeof str !== string){
-        throw Error ('str should be a string inside " "');
+function toRandomCase(string){
+    if(typeof string !== 'string'){
+        throw Error ('str should be a string');
     }
 
      // create an array of words
      var arr = [];
-     arr = str.split(" ");
+     arr = string.split(" ");
  
      var newArr = [];
      // toUpperCase() all first letters
      for (i = 0; i < arr.length; i++) {
          letterArr = arr[i].split("");
          for (var j = 0; j < letterArr.length; j++) {
-             letterArr[j] = Math.random() > 0.5 ? (letterArr[j].toUpperCase()) : (letterArr[j].toLowerCase());
+             letterArr[j] = Math.random() > 0.5 ? letterArr[j].toUpperCase() : letterArr[j].toLowerCase();
          }
          newArr.push(letterArr.join(""));
      }
      return newArr.join(" ");
-     
     myArr = Math.floor(Math.random()*2);
-
-
-}
+};

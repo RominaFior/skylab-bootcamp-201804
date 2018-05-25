@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="vendor/bootstrap/4.1.1/css/bootstrap.css">
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/login.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <div class="container">
+
+        <form class="form-control" _onSubmit={this._handleRegister}>
+            <div class="row justify-content-center ">
+                <input class="form-group col-sm-4 col-sm-offset-4" _value={this.state.userName} _onChange={this._handleKeepName} type="text"
+                    placeholder="User name" />
+            </div>
+            <div class="row justify-content-center ">
+                <input class="form-group col-sm-4 col-sm-offset-4" _value={this.state.password} _onChange={this._handleKeepPassword} type="password"
+                    placeholder="Password" />
+            </div>
+            <div class="row justify-content-center ">
+                <input class="form-group col-sm-4 col-sm-offset-4" _value={this.state.repeatPassword} _onChange={this._handleKeepRepeatPassword}
+                    type="password" placeholder="Repeat Password" />
+            </div>
+            <div class="row justify-content-center ">
+
+                <p class="text-danger text-capitalize">{this.state.notMatchingMessage}</p>
+            </div>
+
+            <div class="row justify-content-center ">
+
+                <p class="text-warning text-capitalize">{this.state.registerFailedMessage}</p>
+            </div>
+            <div class="row justify-content-center ">
+
+                <input class="row justify-content-center " type="submit" value="Send" />
+            </div>
+        </form>
+
+    </div>
+</body>
+
+</html>

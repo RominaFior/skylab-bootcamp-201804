@@ -1,5 +1,7 @@
 'use strict';
 
-var res = toCamelCase('Hello My World');
+// TODO
 
-console.log('toCamelCase("Hello My World") should return "helloMyWorld"', res === "helloMyWorld", res);
+// var res = toCamelCase('Hello My World');
+
+// console.log('toCamelCase("Hello My World") should return "helloMyWorld"', res === "helloMyWorld", res);

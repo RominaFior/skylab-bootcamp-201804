@@ -1,14 +1,11 @@
 'use strict'
 
-var str = "hello My World";
-
     //A GOOD SOLUTION:
     
     function toCamelCase(str){
         if(typeof str !== "string"){
           throw Error("str should be a string")
         }
-
           return str.split(' ').map(function(word,index){
           // If it is the first word make sure to lowercase all the chars.
           if(index == 0){

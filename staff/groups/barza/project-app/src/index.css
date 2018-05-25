@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Abel');
+
+body {
+    background-color: #ffff;
+    font-family: 'Abel', sans-serif;
+}
+
+.jumbotron {
+    background-image: url('./static/images/bg.png');
+    background-position: center;
+}
+
+.jumbotron {
+    color: white;
+}
+
+.jumbotron h1 {
+    font-weight: bold;
+}
+
+.no-margin {
+    margin-bottom: 0;
+}

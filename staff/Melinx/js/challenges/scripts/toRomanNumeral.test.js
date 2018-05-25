@@ -13,7 +13,7 @@ console.log('toRomanNumeral(8) should return VIII', str === "VIII", str);
 error = undefined;
 
 try{
-    count=toCamelCase(true);
+   toRomanNumeral(true);
 } catch(err){
     error = err;
 } finally{

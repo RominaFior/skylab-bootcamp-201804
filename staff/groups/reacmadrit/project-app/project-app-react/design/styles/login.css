@@ -1,0 +1,12 @@
+.login-form {
+    background: #5ccdf3;
+    margin: 0 20%;
+    padding: 20px;
+    align-self: auto;
+}
+
+nav {
+    display: flex;
+    justify-self: center;
+    color: white;
+}
