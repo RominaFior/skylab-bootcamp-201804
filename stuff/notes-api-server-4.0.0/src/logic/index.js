@@ -69,7 +69,7 @@ const logic = {
                     .then(note => {
                         if (!note) throw Error(`note with id ${id} does not exist for userId ${userId}`)
 
-                        return note
+                        return { id: note._id.toString(), userId: note.userId, text: note.text }
                     })
             })
     },
@@ -87,6 +87,7 @@ const logic = {
                 if (!(userId = userId.trim()).length) throw Error('userId is empty or blank')
 
                 return this._notes.find({ userId }).toArray()
+                    .then(notes => notes.map(({ _id, userId, text }) => ({ id: _id.toString(), userId, text })))
             })
     },
 
@@ -164,6 +165,7 @@ const logic = {
                 if (!text.length) throw Error('text is empty')
 
                 return this._notes.find({ userId, text: { $regex: text } }).toArray()
+                    .then(notes => notes.map(({ _id, userId, text }) => ({ id: _id.toString(), userId, text })))
             })
     }
 }

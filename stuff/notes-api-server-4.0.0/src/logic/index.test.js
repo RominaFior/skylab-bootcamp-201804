@@ -124,8 +124,8 @@ describe('logic (notes)', () => {
                             const validIds = ids.slice(0, indexes.length)
                             const validTexts = indexes.map(index => `${noteText} ${index}`)
 
-                            notes.forEach(({ _id, userId, text }) => {
-                                expect(validIds.includes(_id.toString())).toBeTruthy()
+                            notes.forEach(({ id, userId, text }) => {
+                                expect(validIds.includes(id)).toBeTruthy()
                                 expect(userId).toBe(_userId)
                                 expect(validTexts.includes(text)).toBeTruthy()
                             })
@@ -156,13 +156,13 @@ describe('logic (notes)', () => {
 
             return cl.insertOne(_note)
                 .then(() => logic.retrieveNote(_userId, _note._id.toString()))
-                .then(({ _id, userId, text }) => {
-                    expect(_id.toString()).toBe(_note._id.toString())
+                .then(({ id, userId, text }) => {
+                    expect(id).toBe(_note._id.toString())
                     expect(userId).toBe(_userId)
                     expect(text).toBe(noteText)
 
-                    return logic.retrieveNote(wrongUserId, _id.toString())
-                        .catch(({ message }) => expect(message).toBe(`note with id ${_id} does not exist for userId ${wrongUserId}`))
+                    return logic.retrieveNote(wrongUserId, id)
+                        .catch(({ message }) => expect(message).toBe(`note with id ${id} does not exist for userId ${wrongUserId}`))
                 })
         })
 
@@ -388,8 +388,8 @@ describe('logic (notes)', () => {
                             const validIds = ids.slice(0, indexes.length)
                             const validTexts = indexes.map(index => `${noteText} ${index}`)
 
-                            notes.forEach(({ _id, userId, text }) => {
-                                expect(validIds.includes(_id.toString())).toBeTruthy()
+                            notes.forEach(({ id, userId, text }) => {
+                                expect(validIds.includes(id)).toBeTruthy()
                                 expect(userId).toBe(_userId)
                                 expect(validTexts.includes(text)).toBeTruthy()
                             })
@@ -422,8 +422,8 @@ describe('logic (notes)', () => {
 
                             const validTexts = ['my note aA', 'my note aAa']
 
-                            notes.forEach(({ _id, userId, text }) => {
-                                expect(ids.includes(_id.toString())).toBeTruthy()
+                            notes.forEach(({ id, userId, text }) => {
+                                expect(ids.includes(id)).toBeTruthy()
                                 expect(userId).toBe(_userId)
                                 expect(validTexts.includes(text)).toBeTruthy()
                             })
