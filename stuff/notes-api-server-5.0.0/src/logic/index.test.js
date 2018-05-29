@@ -29,6 +29,13 @@ describe('logic (notes)', () => {
                 .then(res => expect(res).to.be.true)
         )
 
+        it('should fail on already registered user', () => {
+            User.create(userData)
+                .then(({id}) => {
+
+                })
+        })
+
         // TODO error cases
     })
 
