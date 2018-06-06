@@ -99,19 +99,113 @@ const logic = {
     retrieveArtist(id) {
         return Promise.resolve()
             .then(() => {
+
                 if (typeof id !== 'string') throw Error('artist id is not a string')
 
                 if (!(id = id.trim()).length) throw Error('artist id is empty or blank')
 
-                return Artist.findById(id).select({ _id: 0, name: 1, email: 1 })
+                return Artist.findById(id).select({_id:0, name:1, email:1, description:1, genre:1, bankAccount:1, votes:1, image:1 })
             })
             .then(artist => {
                 if (!artist) throw Error(`no artist found with id ${id}`)
 
                 return artist
             })
+    }, 
+
+     /**
+     * 
+     * @param {string} id 
+     * @param {string} name      
+     * @param {string} email 
+     * @param {string} password 
+     * @param {string} newEmail 
+     * @param {string} newPassword 
+     * 
+     * @returns {Promise<boolean>}
+     */
+    updateArtist(id, name, email, password, newEmail, newPassword) {
+        return Promise.resolve()
+            .then(() => {
+                if (typeof id !== 'string') throw Error('artist id is not a string')
+
+                if (!(id = id.trim()).length) throw Error('artist id is empty or blank')
+
+                if (typeof name !== 'string') throw Error('artist name is not a string')
+
+                if (!(name = name.trim()).length) throw Error('artist name is empty or blank')
+               
+                if (typeof email !== 'string') throw Error('artist email is not a string')
+
+                if (!(email = email.trim()).length) throw Error('artist email is empty or blank')
+
+                if (typeof password !== 'string') throw Error('artist password is not a string')
+
+                if ((password = password.trim()).length === 0) throw Error('artist password is empty or blank')
+
+                return Artist.findOne({ email, password })
+            })
+            .then(artist => {
+                if (!artist) throw Error('wrong credentials')
+
+                if (artist.id !== id) throw Error(`no artist found with id ${id} for given credentials`)
+
+                if (newEmail) {
+                    return Artist.findOne({ email: newEmail })
+                        .then(_artist => {
+                            if (_artist && _artist.id !== id) throw Error(`artist with email ${newEmail} already exists`)
+
+                            return artist
+                        })
+                }
+
+                return artist
+            })
+            .then(artist => {
+                artist.name = name                
+                artist.email = newEmail ? newEmail : email
+                artist.password = newPassword ? newPassword : password
+
+                return artist.save()
+            })
+            .then(() => true)
     },
 
+
+       /**
+     * 
+     * @param {string} id 
+     * @param {string} email 
+     * @param {string} password 
+     * 
+     * @returns {Promise<boolean>}
+     */
+    unregisterArtist(id, email, password) {
+        return Promise.resolve()
+            .then(() => {
+                if (typeof id !== 'string') throw Error('artist id is not a string')
+
+                if (!(id = id.trim()).length) throw Error('artist id is empty or blank')
+
+                if (typeof email !== 'string') throw Error('artist email is not a string')
+
+                if (!(email = email.trim()).length) throw Error('artist email is empty or blank')
+
+                if (typeof password !== 'string') throw Error('artist password is not a string')
+
+                if ((password = password.trim()).length === 0) throw Error('artist password is empty or blank')
+
+                return Artist.findOne({ email, password })
+            })
+            .then(artist => {
+                if (!artist) throw Error('wrong credentials')
+
+                if (artist.id !== id) throw Error(`no artist found with id ${id} for given credentials`)
+
+                return artist.remove()
+            })
+            .then(() => true)
+    },
 }
 
-module.exports = logic
+module.exports = logic 
