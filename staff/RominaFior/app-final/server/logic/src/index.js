@@ -1,6 +1,6 @@
 'use strict'
 
-const { models: { Artist, Event } } = require('data')
+const { models: { Artist, Event, Category } } = require('data')
 
 const logic = {
     /**
@@ -207,7 +207,7 @@ const logic = {
             .then(() => true)
     },
 
-    addEventToArtist(ownerId, name, date, location) {
+    /* addEventToArtist(ownerId, name, date, location) {
         return Promise.resolve()
           .then(() => {
             if (typeof ownerId !== 'string') throw Error('owner id is not a string')
@@ -234,6 +234,15 @@ const logic = {
               })
           })
     
+      }, */
+
+      listCategories() {
+        return Promise.resolve()
+          .then(() => {
+            
+            return Category.find({})
+              
+          })
       },
 }
 

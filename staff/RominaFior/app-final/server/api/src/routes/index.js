@@ -86,14 +86,13 @@ router.delete('/artist/:artistId', [jwtValidator, jsonBodyParser], (req, res) =>
         })
 })
 
-/*
-router.post('/artist/:artistId/notes', [jwtValidator, jsonBodyParser], (req, res) => {
-    const { params: { artistId }, body: { text } } = req
+router.post('/artist/:artistId/products', [jwtValidator, jsonBodyParser], (req, res) =>{
+    const { params: { artistId }, body: { imgUrl, price, size, color } } = req
 
-    logic.addNote(artistId, text)
-        .then(id => {
+    logic.addProductToUser(artistId, imgUrl, price, size, color)
+        .then(() => {
             res.status(201)
-            res.json({ status: 'OK', data: { id } })
+            res.json({ status: 'OK'})
         })
         .catch(({ message }) => {
             res.status(400)
@@ -101,12 +100,11 @@ router.post('/artist/:artistId/notes', [jwtValidator, jsonBodyParser], (req, res
         })
 })
 
-router.get('/artist/:artistId/notes/:id', jwtValidator, (req, res) => {
-    const { params: { artistId, id } } = req
-
-    logic.retrieveNote(artistId, id)
-        .then(note => {
-            res.json({ status: 'OK', data: note })
+router.get('/categories', (req, res) =>{
+    logic.listCategories()
+        .then(categories => {
+            res.status(200)
+            res.json({ status: 'OK', data: {categories}})
         })
         .catch(({ message }) => {
             res.status(400)
@@ -114,44 +112,4 @@ router.get('/artist/:artistId/notes/:id', jwtValidator, (req, res) => {
         })
 })
 
-router.get('/artist/:artistId/notes', jwtValidator, (req, res) => {
-    const { params: { artistId }, query: { q } } = req;
-
-    (q ? logic.findNotes(artistId, q) : logic.listNotes(artistId))
-        .then(notes => {
-            res.json({ status: 'OK', data: notes })
-        })
-        .catch(({ message }) => {
-            res.status(400)
-            res.json({ status: 'KO', error: message })
-        })
-
-})
-
-router.delete('/artist/:artistId/notes/:id', jwtValidator, (req, res) => {
-    const { params: { artistId, id } } = req
-
-    logic.removeNote(artistId, id)
-        .then(() => {
-            res.json({ status: 'OK' })
-        })
-        .catch(({ message }) => {
-            res.status(400)
-            res.json({ status: 'KO', error: message })
-        })
-})
-
-router.patch('/artist/:artistId/notes/:id', [jwtValidator, jsonBodyParser], (req, res) => {
-    const { params: { artistId, id }, body: { text } } = req
-
-    logic.updateNote(artistId, id, text)
-        .then(() => {
-            res.json({ status: 'OK' })
-        })
-        .catch(({ message }) => {
-            res.status(400)
-            res.json({ status: 'KO', error: message })
-        })
-})
- */
 module.exports = router
