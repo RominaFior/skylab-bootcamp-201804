@@ -1,6 +1,6 @@
 'use strict'
 
-const {models: { Artist, Event } } = require('data')
+const axios = require('axios')
 
 const logic = {
     /**
@@ -52,13 +52,7 @@ const logic = {
                 if ((image = image.trim()).length === 0) throw Error('artist image is empty or blank')              
 
 
-                return Artist.findOne({ email })
-                    .then(artist => {
-                        if (artist) throw Error(`artist with email ${email} already exists`)
-
-                        return Artist.create({ name,email, password, description, genre, bankAccount, votes, image })
-                            .then(() => true)
-                    })
+                // TODO call api through axios
             })
         }}
 
