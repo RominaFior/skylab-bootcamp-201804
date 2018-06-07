@@ -206,6 +206,35 @@ const logic = {
             })
             .then(() => true)
     },
+
+    addEventToArtist(ownerId, name, date, location) {
+        return Promise.resolve()
+          .then(() => {
+            if (typeof ownerId !== 'string') throw Error('owner id is not a string')
+    
+            if (typeof name !== 'string') throw Error('name is not a string')
+    
+            if (typeof date !== 'date') throw Error('date is not a date')
+    
+            if (typeof location !== 'string') throw Error('location is not a string')   
+           
+    
+            return Artist.findById(ownerId)
+              .then(artist => {
+                if (!artist) throw Error(`ownerId not exists`) // manejarlo dsd cliente si no está logged
+    
+                return Product.create({ owner: ownerId, name, date, location })
+                  .then(({ _doc: { _id } }) => {
+    
+                    artist.events.push(_id)
+    
+                    return artist.save()
+                      .then(() => _id.toString())
+                  })
+              })
+          })
+    
+      },
 }
 
 module.exports = logic 
