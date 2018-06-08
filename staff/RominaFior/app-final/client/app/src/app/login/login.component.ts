@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LoginService } from './login.service';
+import {FormGroup, FormControl, Validators } from '@angular/forms'
 import { User } from '../models/user.model';
  
 @Component({
