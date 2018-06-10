@@ -1,0 +1,69 @@
+<section class="bg-primary" id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 mx-auto text-center">
+        <h2 class="section-heading text-white">Registrarse sólo lleva un momento!</h2>
+        <hr class="light my-3">
+
+        <div class="container-fluid h-100">
+          <div class="row justify-content-center align-items-center h-100">
+            <div class="col col-sm-6 col-md-5">
+
+              <form [formGroup]="forma" (ngSubmit)="guardarCambios()">
+                <div class="form-group" [ngClass]="{'ng-invalid': !forma.get('nombre').valid }">
+                  <input _ngcontent-c0="" class="form-control form-control-sm" placeholder="Nombre del espectáculo" type="text" formControlName="nombre">
+                  <div *ngIf="forma.controls['nombre'].errors?.required"
+                        class="form-control-feedback">
+                   <p> <small> El nombre es necesario. </small> </p> 
+                  </div>
+
+                  <div *ngIf="forma.controls['nombre'].errors?.minlength"
+                        class="form-control-feedback">
+                   <p> <small> Por lo menos 3 caracteres </small> </p> 
+                  </div>
+
+                </div>
+                <div class="form-group">
+                  <input class="form-control form-control-sm" placeholder="Email" type="email" formControlName="email">
+                </div>
+                <div class="form-group">
+                  <input class="form-control form-control-sm" placeholder="Nombre de usuario" type="text" formControlName="username">
+                </div>
+                <div class="form-group">
+                  <input class="form-control form-control-sm" placeholder="Contraseña" type="password" formControlName="contraseña">
+                </div>
+                <div class="form-group">
+                    <input class="form-control form-control-sm" placeholder="Confirma contraseña" type="password" formControlName="confirmaContraseña">
+                  </div>
+                <div class="form-group">
+                  <select class="form-control form-control-sm" >
+                    <option value="Infantil">Categoría infantil</option>
+                    <option value="Musical">Categoría musical</option>
+                    <option value="Teatro">Teatro</option>
+                    <option value="Estatuas">Estatuas vivientes</option>
+                    <option value="Destrezas">Destrezas</option>
+                    <option value="Shows">Shows curiosos</option>
+                    </select>
+                </div>
+                <div class="form-group" formControlName="descripcion">
+                  <textarea class="form-control form-control-sm" type="text" formControlName="descripcion">Aquí una breve descripción... </textarea>
+                </div>              
+                <div class="form-group">
+                    <button type="submit" class="btn btn-light btn-lg js-scroll-trigger">
+                    Guardar
+                  </button>
+                </div>
+
+                {{ forma.valid }}
+                <br>
+                {{ forma.status }}
+              </form>
+            </div>
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+  </div>
+</section>
