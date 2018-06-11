@@ -10,6 +10,7 @@ import { NavComponent } from './shared/nav/nav.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { RegisterComponent } from './components/register/register.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { RegisterComponent } from './components/register/register.component';
     LandingComponent,
     NavComponent,
     FooterComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
