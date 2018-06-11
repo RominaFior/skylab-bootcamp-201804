@@ -7,7 +7,7 @@ let _secret = 'NO-SECRET'
 function jwtValidator(req, res, next) {
     let message
 
-    const { params: { artistId } } = req
+    const { params: { userId } } = req
 
     try {
         const auth = req.get('authorization') // Bearer CHURRO-TOKEN
@@ -16,7 +16,7 @@ function jwtValidator(req, res, next) {
 
         const { id } = jwt.verify(token, _secret)
 
-        if (id !== artistId) message = `artist id ${artistId} does not match token artist id ${id}`
+        if (id !== userId) message = `user id ${userId} does not match token user id ${id}`
 
         if (!message) return next()
     } catch (err) {

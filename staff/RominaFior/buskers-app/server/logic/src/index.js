@@ -117,11 +117,11 @@ const logic = {
      * @param {string} email 
      * @param {string} username 
      * @param {string} newEmail 
-     * @param {string} newPassword 
+     * @param {string} newContraseña
      * 
      * @returns {Promise<boolean>}
      */
-    updateUser(id, nombre, email, username, newEmail, newPassword) {
+    updateUser(id, nombre, email, username, contraseña, newEmail, newContraseña) {
         return Promise.resolve()
             .then(() => {
                 if (typeof id !== 'string') throw Error('user id is not a string')
@@ -139,8 +139,12 @@ const logic = {
                 if (typeof username !== 'string') throw Error('user username is not a string')
 
                 if ((username = username.trim()).length === 0) throw Error('user username is empty or blank')
+                
+                if (typeof contraseña !== 'string') throw Error('user contraseña is not a string')
 
-                return User.findOne({ email, username })
+                if ((contraseña = contraseña.trim()).length === 0) throw Error('user contraseña is empty or blank')
+
+                return User.findOne({ email, contraseña })
             })
             .then(user => {
                 if (!user) throw Error('wrong credentials')
@@ -159,9 +163,10 @@ const logic = {
                 return user
             })
             .then(user => {
-                user.nombre = nombre                
+                user.nombre = nombre 
                 user.email = newEmail ? newEmail : email
-                user.username = newPassword ? newPassword : username
+                user.username = username               
+                user.contraseña = newContraseña ? newContraseña : contraseña
 
                 return user.save()
             })
@@ -177,7 +182,7 @@ const logic = {
      * 
      * @returns {Promise<boolean>}
      */
-    unregisterUser(id, email, username) {
+    unregisterUser(id, email, contraseña) {
         return Promise.resolve()
             .then(() => {
                 if (typeof id !== 'string') throw Error('user id is not a string')
@@ -188,11 +193,11 @@ const logic = {
 
                 if (!(email = email.trim()).length) throw Error('user email is empty or blank')
 
-                if (typeof username !== 'string') throw Error('user username is not a string')
+                if (typeof contraseña !== 'string') throw Error('user contraseña is not a string')
 
-                if ((username = username.trim()).length === 0) throw Error('user username is empty or blank')
+                if ((contraseña = contraseña.trim()).length === 0) throw Error('user contraseña is empty or blank')
 
-                return User.findOne({ email, username })
+                return User.findOne({ email, contraseña })
             })
             .then(user => {
                 if (!user) throw Error('wrong credentials')
@@ -233,14 +238,14 @@ const logic = {
     
       }, */
 
-      listCategories() {
+     /*  listCategories() {
         return Promise.resolve()
           .then(() => {
             
             return Category.find({})
               
           })
-      },
+      }, */
 }
 
 module.exports = logic 

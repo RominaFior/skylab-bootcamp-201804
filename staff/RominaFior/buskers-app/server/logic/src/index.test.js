@@ -21,9 +21,10 @@ describe('logic (buskers)', () => {
 
     }
 
-    const otherArtistData = {
+    const otherUserData = {
         nombre: 'Romina',
         email: 'romina@mail.com',
+        username:'rominaf',
         contraseña: '345',
         confirmaContraseña: '345',
         categoria: 'Electronic',
@@ -265,11 +266,11 @@ describe('logic (buskers)', () => {
         )
     })
 
-    /*describe('udpate user', () => {
+    describe('udpate user', () => {
         it('should succeed on correct data', () =>
             User.create(userData)
                 .then(({ id }) => {
-                    return logic.updateArtist(id, 'Romina', 'alex@mail.com', '123', 'romina@mail.com', '345')
+                    return logic.updateUser(id, 'Romina','alex@mail.com','rominaf' ,'123', 'romina@mail.com', '345')
                         .then(res => {
                             expect(res).to.be.true
 
@@ -278,13 +279,15 @@ describe('logic (buskers)', () => {
                         .then(user => {
                             expect(user).to.exist
 
-                            const { nombre, email, contraseña } = user
+                            const { nombre, email, username, contraseña } = user
 
-                            expect(user.id).to.equal(id)                         
-                           
-
+                            expect(user.id).to.equal(id)     
+                            expect(nombre).to.equal('Romina')
                             expect(email).to.equal('romina@mail.com')
+                            expect(username).to.equal('rominaf')
                             expect(contraseña).to.equal('345')
+
+                            
                         })
                 })
         )
@@ -292,82 +295,97 @@ describe('logic (buskers)', () => {
         it('should fail on changing email to an already existing user\'s email', () =>
             Promise.all([
                 User.create(userData),
-                User.create(otherArtistData)
+                User.create(otherUserData)
             ])
                 .then(([{ id: id1 }, { id: id2 }]) => {
-                    const { nombre, email, contraseña } = userData
+                    const { nombre, email, username, contraseña} = userData
 
-                    return logic.updateArtist(id1, nombre, email, contraseña, otherArtistData.email)
+                    return logic.updateUser(id1, nombre, email, username, contraseña, otherUserData.email)
                 })
-                .catch(({ message }) => expect(message).to.equal(`user with email ${otherArtistData.email} already exists`))
+                .catch(({ message }) => expect(message).to.equal(`user with email ${otherUserData.email} already exists`))
         )
 
         it('should fail on no user id', () =>
-            logic.updateArtist()
+            logic.updateUser()
                 .catch(({ message }) => expect(message).to.equal('user id is not a string'))
         )
 
         it('should fail on empty user id', () =>
-            logic.updateArtist('')
+            logic.updateUser('')
                 .catch(({ message }) => expect(message).to.equal('user id is empty or blank'))
         )
 
         it('should fail on blank user id', () =>
-            logic.updateArtist('     ')
+            logic.updateUser('     ')
                 .catch(({ message }) => expect(message).to.equal('user id is empty or blank'))
         )
 
         it('should fail on no user nombre', () =>
-            logic.updateArtist(dummyUserId)
+            logic.updateUser(dummyUserId)
                 .catch(({ message }) => expect(message).to.equal('user nombre is not a string'))
         )
 
         it('should fail on empty user nombre', () =>
-            logic.updateArtist(dummyUserId, '')
+            logic.updateUser(dummyUserId, '')
                 .catch(({ message }) => expect(message).to.equal('user nombre is empty or blank'))
         )
 
         it('should fail on blank user nombre', () =>
-            logic.updateArtist(dummyUserId, '     ')
+            logic.updateUser(dummyUserId, '     ')
                 .catch(({ message }) => expect(message).to.equal('user nombre is empty or blank'))
         )
 
         it('should fail on no user email', () =>
-            logic.updateArtist(dummyUserId, userData.nombre)
+            logic.updateUser(dummyUserId, userData.nombre)
                 .catch(({ message }) => expect(message).to.equal('user email is not a string'))
         )
 
         it('should fail on empty user email', () =>
-            logic.updateArtist(dummyUserId, userData.nombre, '')
+            logic.updateUser(dummyUserId, userData.nombre, '')
                 .catch(({ message }) => expect(message).to.equal('user email is empty or blank'))
         )
 
         it('should fail on blank user email', () =>
-            logic.updateArtist(dummyUserId, userData.nombre, '     ')
+            logic.updateUser(dummyUserId, userData.nombre, '     ')
                 .catch(({ message }) => expect(message).to.equal('user email is empty or blank'))
         )
 
+        it('should fail on no user username', () =>
+            logic.updateUser(dummyUserId, userData.nombre, userData.email)
+                .catch(({ message }) => expect(message).to.equal('user username is not a string'))
+        )
+
+        it('should fail on empty user username', () =>
+            logic.updateUser(dummyUserId, userData.nombre, userData.email, '')
+                .catch(({ message }) => expect(message).to.equal('user username is empty or blank'))
+        )
+
+        it('should fail on blank user username', () =>
+            logic.updateUser(dummyUserId, userData.nombre, userData.email, '     ')
+                .catch(({ message }) => expect(message).to.equal('user username is empty or blank'))
+        )
+
         it('should fail on no user contraseña', () =>
-            logic.updateArtist(dummyUserId, userData.nombre, userData.email)
+            logic.updateUser(dummyUserId, userData.nombre, userData.email, userData.username)
                 .catch(({ message }) => expect(message).to.equal('user contraseña is not a string'))
         )
 
-        it('should fail on empty user contraseña', () =>
-            logic.updateArtist(dummyUserId, userData.nombre, userData.email, '')
+        /* it('should fail on empty user contraseña', () =>
+            logic.updateUser(dummyUserId, userData.nombre, userData.email, userData.username, '')
                 .catch(({ message }) => expect(message).to.equal('user contraseña is empty or blank'))
         )
 
         it('should fail on blank user contraseña', () =>
-            logic.updateArtist(dummyUserId, userData.nombre, userData.email, '     ')
+            logic.updateUser(dummyUserId, userData.nombre, userData.email, userData.username, '     ')
                 .catch(({ message }) => expect(message).to.equal('user contraseña is empty or blank'))
-        )
+        ) */
     })
 
     describe('unregister user', () => {
         it('should succeed on correct data', () =>
             User.create(userData)
                 .then(({ id }) => {
-                    return logic.unregisterArtist(id, 'alex@mail.com', '123')
+                    return logic.unregisterUser(id, 'alex@mail.com', '123')
                         .then(res => {
                             expect(res).to.be.true
 
@@ -380,51 +398,51 @@ describe('logic (buskers)', () => {
         )
 
         it('should fail on no user id', () =>
-            logic.unregisterArtist()
+            logic.unregisterUser()
                 .catch(({ message }) => expect(message).to.equal('user id is not a string'))
         )
 
         it('should fail on empty user id', () =>
-            logic.unregisterArtist('')
+            logic.unregisterUser('')
                 .catch(({ message }) => expect(message).to.equal('user id is empty or blank'))
         )
 
         it('should fail on blank user id', () =>
-            logic.unregisterArtist('     ')
+            logic.unregisterUser('     ')
                 .catch(({ message }) => expect(message).to.equal('user id is empty or blank'))
         )
 
         it('should fail on no user email', () =>
-            logic.unregisterArtist(dummyUserId)
+            logic.unregisterUser(dummyUserId)
                 .catch(({ message }) => expect(message).to.equal('user email is not a string'))
         )
 
         it('should fail on empty user email', () =>
-            logic.unregisterArtist(dummyUserId, '')
+            logic.unregisterUser(dummyUserId, '')
                 .catch(({ message }) => expect(message).to.equal('user email is empty or blank'))
         )
 
         it('should fail on blank user email', () =>
-            logic.unregisterArtist(dummyUserId, '     ')
+            logic.unregisterUser(dummyUserId, '     ')
                 .catch(({ message }) => expect(message).to.equal('user email is empty or blank'))
         )
 
         it('should fail on no user contraseña', () =>
-            logic.unregisterArtist(dummyUserId, userData.email)
+            logic.unregisterUser(dummyUserId, userData.email)
                 .catch(({ message }) => expect(message).to.equal('user contraseña is not a string'))
         )
 
         it('should fail on empty user contraseña', () =>
-            logic.unregisterArtist(dummyUserId, userData.email, '')
+            logic.unregisterUser(dummyUserId, userData.email, '')
                 .catch(({ message }) => expect(message).to.equal('user contraseña is empty or blank'))
         )
 
         it('should fail on blank user contraseña', () =>
-            logic.unregisterArtist(dummyUserId, userData.email, '     ')
+            logic.unregisterUser(dummyUserId, userData.email, '     ')
                 .catch(({ message }) => expect(message).to.equal('user contraseña is empty or blank'))
         )
     })  
 
- */
+ 
     after(done => mongoose.connection.db.dropDatabase(() => mongoose.connection.close(done)))
 })
