@@ -95,7 +95,7 @@ export class AppComponent implements OnInit {
         var user = response.user;
         this.user_register = user;
 
-       if (!user.id) {
+       if (!user._id) {
         this.alertRegister='Error al registrarse';
        }else{
         this.alertRegister=`El registro se ha realizado correctamente, identifícate con ${this.user_register.email}`;
