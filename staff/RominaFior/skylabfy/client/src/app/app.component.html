@@ -1,42 +1,48 @@
 <div *ngIf="identity" class="navigation col-lg-1">
-    <h1>
-        {{title}}
+    <h1 class="head-title">
+        <a [routerLink]="['/']">
+            <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
+            {{title}}
+        </a>
     </h1>
     <nav id="navigation">
         <a href="#">
-            <span class="glyphicon glyphicon-search" aria-hidden="true">Buscar</span>
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>Buscar
         </a>
         <a href="#">
-            <span class="glyphicon glyphicon-star" aria-hidden="true">Artistas</span>
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>Artistas
         </a>
         <a href="#">
-            <span class="glyphicon glyphicon-book" aria-hidden="true">Albums</span>
+            <span class="glyphicon glyphicon-book" aria-hidden="true"></span>Albums
         </a>
     </nav>
 
     <nav id="user_logged">
-        <span>
-            {{identity.name}} 
+        <div class="user-image">
+            <img id="image-logged" src="{{url+'get-image-user/'+identity.image}}">
+        </div>
+        <span id="identity_name">
+            {{identity.name}}
         </span>
-        <div class="clearfix"></div>
-        <button class="btn btn-warning" (click)="logout()">
-            Cerrar sesión
-        </button>
-        <div class="clearfix"></div>
+
         <a [routerLink]="['/mis-datos']">
-            <span class="glyphicon glyphicon-cog" aria-hidden="true">Configurar</span>
+            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>Configurar
+        </a>
+        <a (click)="logout()">
+            <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+            Salir
         </a>
     </nav>
 </div>
-<div class="clearfix"></div>
+
 
 <div *ngIf="identity" class="central col-lg-11">
     <p>Estas logueado en la aplicación</p>
     <router-outlet></router-outlet>
 </div>
 
-<div class="row p-5" *ngIf="!identity">
-    <div class="col-md-6">
+<div class="col-lg-11" *ngIf="!identity">
+    <div class="col-lg-6">
         <h1>Identifícate</h1>
         <div *ngIf="errorMessage">
             <div class="alert alert-info" role="alert">
@@ -44,7 +50,7 @@
             </div>
         </div>
 
-        <form #loginForm="ngForm" (ngSubmit)="onSubmit()" class="col-md-8">
+        <form #loginForm="ngForm" (ngSubmit)="onSubmit()" class="col-md-7">
             <p>
                 <label>Correo electrónico</label>
                 <input type="email" #email="ngModel" name="email" [(ngModel)]="user.email" class="form-control" required>
