@@ -29,11 +29,11 @@ export class UserEditComponent implements OnInit {
     }
 
     ngOnInit() {
-        
+
     }
 
     onSubmit() {
-        
+
         this._userService.updateUser(this.user).subscribe(
             response => {
 
@@ -47,12 +47,12 @@ export class UserEditComponent implements OnInit {
                     if (!this.filesToUpload) {
                         //redireccion
                     } else {
-                        this.makeFileRequest(this.url + 'upload-image-user/'+this.user._id, [], this.filesToUpload).then(
-                            (result:any) => {
+                        this.makeFileRequest(this.url + 'upload-image-user/' + this.user._id, [], this.filesToUpload).then(
+                            (result: any) => {
                                 this.user.image = result.image;
                                 localStorage.setItem('identity', JSON.stringify(this.user));
-                               
-                                let image_path = this.url+'get-image-user/'+this.user.image;
+
+                                let image_path = this.url + 'get-image-user/' + this.user.image;
                                 document.getElementById('image-logged').setAttribute('src', image_path);
                             }
                         )
@@ -80,7 +80,7 @@ export class UserEditComponent implements OnInit {
     makeFileRequest(url: string, params: Array<string>, files: Array<File>) {
         var token = this.token;
         return new Promise(function (resolve, reject) {
-            var formData:any = new FormData();
+            var formData: any = new FormData();
             var xhr = new XMLHttpRequest();
 
             for (let i = 0; i < files.length; i++) {

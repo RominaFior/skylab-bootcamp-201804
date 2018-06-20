@@ -2,16 +2,19 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
-/* const cors = require('cors'); */
+
 
 const app = express();
 
 //cargar rutas
-let user_routes = require('./routes/user')
+let user_routes = require('./routes/user');
+var artist_routes = require('./routes/artist');
+var album_routes = require('./routes/album');
+var song_routes = require('./routes/song');
 
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json());
-/* app.use(cors()); */
+
 
 //configurar cabeceras http
 app.use((req, res, next)=>{
@@ -24,6 +27,9 @@ app.use((req, res, next)=>{
 
 //rutas base
 app.use('/api', user_routes );
+app.use('/api', artist_routes );
+app.use('/api', album_routes );
+app.use('/api', song_routes );
 
 
 module.exports = app;

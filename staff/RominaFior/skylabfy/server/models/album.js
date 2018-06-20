@@ -3,13 +3,11 @@ const Schema = mongoose.Schema;
 
 
 let AlbumSchema = Schema({
-    name: {
-        title: String,
-        
+    title: {
+        type: String      
     },
     description: {
-        type: String,
-        
+        type: String        
     },
     year: {
         type: Number
@@ -18,7 +16,7 @@ let AlbumSchema = Schema({
         type: String
     },
     artist: {
-        type: Shema.ObjectId,
+        type: Schema.ObjectId,
         ref: "Artist"
     }
     

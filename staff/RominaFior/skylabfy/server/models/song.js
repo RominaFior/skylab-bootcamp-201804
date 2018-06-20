@@ -4,10 +4,10 @@ const Schema = mongoose.Schema;
 
 let SongSchema = Schema({
     number: {
-        type: String
+        type: Number
     },
     name: {
-        title: String,
+        type: String,
         
     },
     duration: {
