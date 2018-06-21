@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit{
     }
 
     ngOnInit(){
-        //conseguir listado de artistas
+     
 
     }
 }

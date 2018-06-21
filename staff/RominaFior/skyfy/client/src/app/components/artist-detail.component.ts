@@ -5,7 +5,7 @@ import { GLOBAL } from '../services/global'
 import { ArtistService } from '../services/artist.service';
 import { UserService } from '../services/user.service';
 import { AlbumService } from '../services/album.service';
-import { UploadService } from '../services/upload.service';
+/* import { UploadService } from '../services/upload.service'; */
 import { Artist } from '../models/artist';
 import { Album } from '../models/album';
 
