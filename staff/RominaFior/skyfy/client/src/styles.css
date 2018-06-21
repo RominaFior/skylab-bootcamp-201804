@@ -24,7 +24,7 @@ html, body {
 
 .seguro {
     margin-top: -35px;
-   /*  background: whitesmoke; */
+    background: whitesmoke;
     position: absolute;
     height: 40px;
 }
