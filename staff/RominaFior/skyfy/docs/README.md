@@ -100,17 +100,17 @@ to run Angular
 
 ### Artists
 
-![](./artistasAdmin.png)
+![](./artistasAdmin.PNG)
 
 
 ### Update User
 
-![](./actualizar.png)
+![](./actualizar.PNG)
 
 ### Artist Detail | albums
 
-![](./artistDetail.png)
+![](./artistDetail.PNG)
 
 ### Songs
 
-![](./songs.png)
+![](./songs.PNG)
