@@ -115,9 +115,9 @@ function updateUser(req, res) {
 
 function uploadImage(req, res) {
     let userId = req.params.id;
-    var file_name = 'Imagen no subida';
+    var file_name = 'Imagen no subida'; //nombre fichero
 
-    if (req.files) {
+    if (req.files) { //variable superglobal file de connect mutiparty
         var file_path = req.files.image.path;
         var file_split= file_path.split('\\');
         var file_name = file_split[2]

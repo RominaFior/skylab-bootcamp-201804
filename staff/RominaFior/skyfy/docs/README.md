@@ -5,6 +5,25 @@
 It is a digital music service with access to multiple audit tracks. In this project, it is designed to have a frontend to listen to the music, and a backend to manage artists, albums and songs.
 <br>
 
+## DESIGN (screenshots)
+
+### Artists
+
+![](./artistasAdmin.PNG)
+
+
+### Update User
+
+![](./actualizar.PNG)
+
+### Artist Detail | albums
+
+![](./artistDetail.PNG)
+
+### Songs
+
+![](./songs.PNG)
+
 
 # Technologies
 
@@ -96,21 +115,3 @@ In the project directory client, you can run:
 ### `ng serve`
 to run Angular
 
-## DESIGN (screenshots)
-
-### Artists
-
-![](./artistasAdmin.PNG)
-
-
-### Update User
-
-![](./actualizar.PNG)
-
-### Artist Detail | albums
-
-![](./artistDetail.PNG)
-
-### Songs
-
-![](./songs.PNG)
